@@ -16,9 +16,9 @@ podTemplate(containers: [
                 stage('Build a gradle project') {
                     // from the git plugin
                     // https://www.jenkins.io/doc/pipeline/steps/git/
-                    git 'https://github.com/dlambrig/Continuous-Delivery-with-Docker-and-Jenkins-Second-Edition.git'
+                    git 'https://github.com/mrk74-2023/jacacochapter8.git'
                     sh '''
-                    cd Chapter08/sample1
+                    cd sample1
                     chmod +x gradlew
                     ./gradlew test
                     '''
@@ -28,7 +28,7 @@ podTemplate(containers: [
                     try {
                         sh '''
         	            pwd
-               		    cd Chapter08/sample1
+               		    cd sample1
                 	    ./gradlew jacocoTestCoverageVerification
                         ./gradlew jacocoTestReport
                         '''
@@ -39,7 +39,7 @@ podTemplate(containers: [
                     // from the HTML publisher plugin
                     // https://www.jenkins.io/doc/pipeline/steps/htmlpublisher/
                     publishHTML (target: [
-                        reportDir: 'Chapter08/sample1/build/reports/tests/test',
+                        reportDir: 'sample1/build/reports/tests/test',
                         reportFiles: 'index.html',
                         reportName: "jacoco checkstyle"
                     ])                       
