@@ -29,7 +29,7 @@ podTemplate(containers: [
                         sh '''
         	            pwd
                		    cd sample1
-                        sh ./gradlew checkstyleMain
+                        sh ./gradlew checkstyleMain --stacktrace
                         '''
                     } catch (Exception E) {
                         echo 'Failure detected'
