@@ -31,6 +31,7 @@ podTemplate(containers: [
                		    cd sample1
                 	    ./gradlew jacocoTestCoverageVerification
                         ./gradlew jacocoTestReport
+                        ./gradlew checkstyleMain
                         '''
                     } catch (Exception E) {
                         echo 'Failure detected'
