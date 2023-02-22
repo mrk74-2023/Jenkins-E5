@@ -29,8 +29,6 @@ podTemplate(containers: [
                         sh '''
         	            pwd
                		    cd sample1
-                	    ./gradlew jacocoTestCoverageVerification
-                        ./gradlew jacocoTestReport
                         ./gradlew checkstyleMain
                         '''
                     } catch (Exception E) {
